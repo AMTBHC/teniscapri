@@ -1,0 +1,220 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Estilos generales */
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Asegura que la vista tenga al menos el alto de la pantalla */
+}
+
+/* Barra de navegación fija en la parte superior */
+.logo-image {
+  height: 40px; /* Adjust as needed */
+}
+
+.navbar2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Separar los elementos */
+  align-items: center;
+  background-color: #000000;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+/* Contenedor de la parte izquierda de la navbar (logo, buscador, carrito) */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo */
+.navbar-logo img {
+  width: 100px; /* Ajusta el tamaño del logo */
+  margin-right: 20px;
+}
+
+
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #494949;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 20px; /* Espacio entre la barra de búsqueda y el carrito */
+}
+
+
+.navbar-search input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 13px;
+  width: 80%; /* Ajusta el ancho del input */
+  height: 30px; /* Ajusta la altura del input */
+  background-color: #000000; /* Color de fondo */
+  border-radius: 30px; /* Bordes redondeados */
+  color: #ddd;
+}
+
+.search-icon {
+  color: #8d8b8b;
+  margin-left: 10px;
+  font-size: 24px; /* Tamaño del icono */
+}
+
+.navbar-cart {
+  color: #8d8b8b;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 20px; /* Espacio entre el carrito y los elementos de la derecha */
+}
+
+
+/* Centrado de la lista de navegación */
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1; /* Hace que ocupe el espacio disponible */
+}
+
+/* Estilo para los items de la lista */
+.navbar-item {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+.navbar-item:hover {
+  color: #918336;
+}
+
+/* Espaciado para que el contenido no quede tapado por la navbar */
+.App-header {
+  margin-top: 70px; /* Ajusta según la altura de la navbar */
+  width: 100%;
+  text-align: center;
+}
+/* Estilos para la lista de productos */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cuadrícula adaptable */
+  gap: 20px;
+  padding: 20px;
+  width: 80%;
+  max-width: 1200px; /* Limitamos el ancho máximo */
+  margin: 0 auto; /* Centrar el contenedor */
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+
+.image-section {
+  position: relative;
+  width: 100%;
+  height: 550px; /* Ajusta el alto de la sección según sea necesario */
+}
+
+.image-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./assets/fotos.jpg'); /* Ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(50%); /* Oscurecer y difuminar solo la imagen */
+  z-index: 0; /* Coloca la imagen en el fondo */
+}
+
+.image-overlay {
+  font-family: 'Courier Prime', monospace;
+  position: absolute;
+  top: 50%;
+  left: 20px; /* Posiciona el texto hacia la izquierda */
+  transform: translateY(-50%); /* Centra el texto verticalmente */
+  color: white; /* Texto blanco */
+  text-align: left; /* Alineación del texto a la izquierda */
+  padding: 20px;
+  z-index: 1; /* Asegura que el texto esté por encima de la imagen */
+  max-width: 50%; /* Limita el ancho del texto a la mitad de la pantalla (ajustable) */
+  font-weight: bold;
+}
+
+.image-overlay h2{
+  margin: 5px 0; /* Espacio entre los elementos de texto */
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.image-overlay p {
+  margin: 5px 0; /* Espacio entre los elementos de texto */
+  font-size: 2rem;
+  
+}
+
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
